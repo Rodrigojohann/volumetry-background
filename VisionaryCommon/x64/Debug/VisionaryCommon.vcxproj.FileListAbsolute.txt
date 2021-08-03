@@ -1,0 +1,2 @@
+C:\SICK\Integration\ProgrammingExamples\C++\TCP Blob Receiver\x64\Debug\VisionaryCommon.pdb
+C:\SICK\Integration\ProgrammingExamples\C++\TCP Blob Receiver\VisionaryCommon\x64\Debug\VisionaryCommon.pdb
