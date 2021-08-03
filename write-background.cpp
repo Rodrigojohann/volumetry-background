@@ -48,7 +48,7 @@ void runStreamingDemo(char* ipAddress, unsigned short port)
 	PointCloudPlyWriter::WriteFormatPLY(plyFilePath, pointCloud, true);
 	printf("Finished writing frame to %s\n", plyFilePath);
 	
-	}
+	
 	control.stopAcquisition();
 	control.closeConnection();
 	dataStream.closeConnection();
