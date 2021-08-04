@@ -60,8 +60,7 @@ void runStreamingDemo(char* ipAddress, unsigned short port)
 		cloud->points[i].y = pointCloud[i].y;
 		cloud->points[i].z = pointCloud[i].z;
 	}
-	cloud1 = cloud;
-	cloud_concat += cloud1;
+	*cloud_concat = (*cloud_concat) + (*cloud);
 	}
 	
 	pcl::io::savePLYFileASCII ("volumetry-background/cloud_nobackground.ply", *cloud_concat);
