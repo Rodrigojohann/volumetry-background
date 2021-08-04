@@ -63,7 +63,7 @@ void runStreamingDemo(char* ipAddress, unsigned short port)
 	*cloud_concat = (*cloud_concat) + (*cloud);
 	}
 	
-	pcl::io::savePLYFileASCII ("volumetry-background/cloud_nobackground.ply", *cloud_concat);
+	pcl::io::savePLYFileASCII ("backgroundcloud.ply", *cloud_concat);
 	
 	control.stopAcquisition();
 	control.closeConnection();
