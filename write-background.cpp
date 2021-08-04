@@ -19,6 +19,7 @@
 std::vector<PointXYZ> pointCloud;
 boost::shared_ptr<VisionaryTData> pDataHandler;
 pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
+pcl::PointCloud<pcl::PointXYZ>::Ptr cloud1 (new pcl::PointCloud<pcl::PointXYZ>);
 pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_concat (new pcl::PointCloud<pcl::PointXYZ>);
 ///////////////////////////////////////////////////////
 
@@ -59,8 +60,8 @@ void runStreamingDemo(char* ipAddress, unsigned short port)
 		cloud->points[i].y = pointCloud[i].y;
 		cloud->points[i].z = pointCloud[i].z;
 	}
-	
-	cloud_concat += cloud;
+	cloud1 = cloud;
+	cloud_concat += cloud1;
 	}
 	
 	pcl::io::savePLYFileASCII ("volumetry-background/cloud_nobackground.ply", *cloud_concat);
