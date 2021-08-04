@@ -11,7 +11,9 @@
 #include "PointXYZ.h"
 #include "PointCloudPlyWriter.h"
 #include "VisionaryAutoIPScan.h"
-
+#include <iostream>
+#include <pcl/io/ply_io.h>
+#include <pcl/point_types.h>
 
 
 std::vector<PointXYZ> pointCloud;
@@ -61,11 +63,7 @@ void runStreamingDemo(char* ipAddress, unsigned short port)
 	cloud_concat += cloud;
 	}
 	
-	char* plyFilePath = "backgroundcloud.ply";
-	printf("Writing frame to %s\n", plyFilePath);
-	PointCloudPlyWriter::WriteFormatPLY(plyFilePath, cloud_concat, true);
-	printf("Finished writing frame to %s\n", plyFilePath);
-	
+	pcl::io::savePLYFileASCII ("volumetry-background/cloud_nobackground.ply", *cloud_concat);
 	
 	control.stopAcquisition();
 	control.closeConnection();
