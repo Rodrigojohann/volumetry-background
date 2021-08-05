@@ -12,7 +12,7 @@
 #include "PointCloudPlyWriter.h"
 #include "VisionaryAutoIPScan.h"
 #include <iostream>
-#include <pcl/io/ply_io.h>
+#include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
 
 
@@ -44,7 +44,7 @@ void runStreamingDemo(char* ipAddress, unsigned short port)
 	control.stopAcquisition();
 	control.startAcquisition();
 	
-	for (int i = 0; i < 20; i++)
+	for (int i = 0; i < 50; i++)
 	{
 	if (dataStream.getNextFrame())
 		{
@@ -63,7 +63,7 @@ void runStreamingDemo(char* ipAddress, unsigned short port)
 	*cloud_concat = (*cloud_concat) + (*cloud);
 	}
 	
-	pcl::io::savePLYFileASCII ("backgroundcloud.ply", *cloud_concat);
+	pcl::io::savePCDFileASCII ("backgroundcloud.pcd", *cloud_concat);
 	
 	control.stopAcquisition();
 	control.closeConnection();
