@@ -63,7 +63,7 @@ void runStreamingDemo(char* ipAddress, unsigned short port)
 	*cloud_concat = (*cloud_concat) + (*cloud);
 	}
 	
-	pcl::io::savePCDFileASCII ("backgroundcloud.pcd", *cloud_concat);
+	pcl::io::savePCDFileASCII ("backgroundcloud5.pcd", *cloud_concat);
 	
 	control.stopAcquisition();
 	control.closeConnection();
@@ -73,5 +73,5 @@ void runStreamingDemo(char* ipAddress, unsigned short port)
 
 int main()
 {
-	runStreamingDemo((char*)"192.168.140.29", 2114);
+	runStreamingDemo((char*)"192.168.140.34", 2114);
 }
